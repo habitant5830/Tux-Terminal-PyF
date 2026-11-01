@@ -1,4 +1,5 @@
 import feedparser
+import json
 
 # Identify the keys provided by feed
 feed = feedparser.parse('https://feed.itsfoss.com/')
@@ -9,16 +10,22 @@ entries = feed.entries
 metadata = feed.feed
 metadata_keys = metadata.keys()
 
-print('Available feed keys: ',keys)
-print('Available metadata keys: ',metadata_keys)
+articles = {}
 
 for article in entries:
-    print('Title: ',article.title)
-    print('Url: ',article.link)
-    print('Description: ',article.summary)
-    print('Written by: ',article.author)
-    print('Date: ',article.published)
-    print('Source: ',metadata.link)
-    print('')
+    items = {
+        'Title: ': article.title,
+        'Url: ' : article.link,
+        'Description: ' : article.summary,
+        'Written by: ' : article.author,
+        'Date: ' : article.published,
+        'Source: ' : metadata.link,
+    }
+
+    articles = items
+
+for i in articles:
+    for j in articles:
+        print(j,':',articles[j])
     
 print("Total number of articles fetched: ",len(entries))
