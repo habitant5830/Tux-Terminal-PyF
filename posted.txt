@@ -1,0 +1,28 @@
+Title: Killed by Ubuntu, Linux Mint is Bringing This Classic Feature Back
+Url: https://feed.itsfoss.com/link/24361/17513761/linux-mint-new-sleep-modes
+Description: Linux Mint is bringing back a feature most Linux distributions quietly gave up on years ago: hibernation.
+Written by: Abhishek Prakash
+Date: 2026-11-02
+Source: https://itsfoss.com/
+
+Title: France’s Weird Per-Gigabyte Data Tax Could Cost VLC Over €1 Million a Year!
+Url: https://feed.itsfoss.com/link/24361/17513348/vlc-outrage-at-french-internet-tax
+Description: France's National Assembly has voted in favour of a new "internet tax" that would charge companies for every gigabyte of data they send to users in France. It may get messier than GDPR.
+Written by: Abhishek Prakash
+Date: 2026-11-02
+Source: https://itsfoss.com/
+
+Title: This Tool Lets You Install Linux Without a USB Key, Straight From Windows
+Url: https://feed.itsfoss.com/link/24361/17513222/libertix
+Description: Wubi reimagined? Here's a new open source project that lets you dual boot Linux from Windows without needing any USB or DVD.
+Written by: Abhishek Prakash
+Date: 2026-11-02
+Source: https://itsfoss.com/
+
+Title: Here's How You Can Use VPNs for FREE on Linux
+Url: https://feed.itsfoss.com/link/24361/17512838/free-vpn-linux
+Description: Need a VPN once in a while but don't want to pay for a yearly plan? Here are free VPN options that work on Linux, either in the browser or system-wide.
+Written by: Abhishek Prakash
+Date: 2026-11-01
+Source: https://itsfoss.com/
+
