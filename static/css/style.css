@@ -18,6 +18,9 @@
     /*link*/
     --link: #001b12;
     --link-hover: #006d49;
+
+    /*tag pill*/
+    --tag-pill: #00fa9a;
 }
 
 body {
@@ -119,6 +122,14 @@ a {
     border-radius: var(--border-radius);
     padding: 1rem;
     margin: 1rem;
+}
+
+.tag-pill{
+    display: inline;
+    background-color: var(--tag-pill);
+    padding: 5px;
+    font-size: 13px;
+    border-radius: var(--border-radius);
 }
 
 .article-title {

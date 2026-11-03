@@ -1,0 +1,444 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style/style.css" />
+    <link rel="icon" href="/images/favicon.png" />
+    <title>Tux & Terminal</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/index.html">Tux & Terminal</a>
+        <div class="nav-items">
+          <a href="/index.html">Home</a> <a href="/articles.html">Articles</a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <h1>Fingerprinting: The Hidden Trap on the Modern Web</h1>
+
+      <p>
+        Nowadays online privacy is almost dead. Even in the comfort and dopamine
+        loop we get from social media and the web, we also started to forget
+        about the importance of privacy on the web. A single website owner to
+        big corporations, including governments, has most of our browsing data,
+        more than they need to protect us. Our every move is cleverly traced and
+        kept for years without any security at all.
+      </p>
+      <p>
+        One of the most effective methods used to identify a person and the
+        device he uses is fingerprinting. "Fingerprinting" isn't just a word
+        that indicates something, but it is the pipe they use to transmit or
+        extract all our data (the device we use, operating system, installed
+        fonts, etc.) via every single website we use. For monetization and
+        earning, every single website owner injects tracking code into their
+        websites without even knowing the full story.
+      </p>
+      <h2>What is fingerprinting?</h2>
+      <p>
+        It is a method used to identify a particular browser, extension,
+        hardware, or user by collecting and combining various data like
+      </p>
+      <ul>
+        <li>Browser version</li>
+        <li>Extension installed</li>
+        <li>timezone and system-level language.</li>
+        <li>Installed audio and video codecs</li>
+        <li>Installed fonts.</li>
+        <li>Browser settings tweaks.</li>
+        <li>device resolution and size.</li>
+        <li>Browser window size</li>
+        <li>Using an operating system</li>
+      </ul>
+      <p>and much more data.</p>
+      <p>
+        They collect it and combine it to identify users at different browsing
+        sessions or even for cross-browser tracking.
+      </p>
+      <h3>
+        Is this much data directly provided to every website we visit by
+        default?
+      </h3>
+      <p>
+        Yes, of course. All this data is automatically collected and stored on
+        the server when we visit websites with our most used browsers (Chrome,
+        Edge, Firefox, etc.). It’s not cookies; it’s creepier and permanent
+        compared to it.
+      </p>
+      <p>
+        But some other privacy-focused browsers (Mullvad, LibreWolf, Tor
+        Browser, Brave Origin, etc.) prevent most of this data from getting
+        leaked to websites we visit. Or they just spoof the values with a fake
+        one, so the collected data becomes useless.
+      </p>
+      <h2>JavaScript: The Real Danger</h2>
+      <p>
+        JavaScript is a scripting language we use to write scripts. It provides
+        added functionality to browsers and websites. What else can a normal
+        scripting language do other than build some scripts. Right?
+      </p>
+      <p>
+        Not at all. JavaScript is the tool all these websites use to harvest
+        this much information from our devices. JavaScript is very useful, and
+        at the same time it exposes a lot more than we can imagine about our
+        browser and device.
+      </p>
+
+      JavaScript depends on web APIs to run invisible background tasks for
+      getting system details. This includes hardware info, RAM, screen size,
+      timezone, etc.
+
+      <h3>Types of fingerprinting using JavaScript.</h3>
+      <p>
+        Imagine JavaScript is giving a tiny task to your computer. By analysing
+        the way user's system process the task, JavaScript measures specific
+        hardware on the system that is used to complete the task.
+      </p>
+      <p>
+        Look at some fingerprinting methods effectively usable and continuously
+        used with the help of JavaScript.
+      </p>
+      <h3>1. Canvas fingerprinting (2D Graphics)</h3>
+
+      <p>
+        Canvas is an HTML5 element used to draw 2D graphics and text directly on
+        a webpage.
+      </p>
+
+      <h4>How does fingerprinting work?</h4>
+      <ul>
+        <li>
+          JavaScript asks the browser to draw a 2D image with specific colors
+          and shadows.
+        </li>
+      </ul>
+      <ul>
+        <li>
+          According to the operating system, graphics driver, and graphics card,
+          the way the system processes anti-aliasing is a bit different.
+        </li>
+      </ul>
+
+      Anti-aliasing is a method used to smooth out the edges.
+
+      <ul>
+        <li>
+          The script notices these differences and renders those pixels into a
+          text hash, creating a unique code.
+        </li>
+      </ul>
+
+      <h3>2. WebGL fingerprinting (3D Graphics)</h3>
+      <p>WebGL is a browser API that allows sites to render 3D graphics.</p>
+
+      <h4>How does fingerprinting work?</h4>
+
+      <ul>
+        <li>
+          WebGL just directly asks the user's system for its GPU's manufacturer
+          and model name.
+        </li>
+      </ul>
+      <ul>
+        <li>
+          It also forces the GPU to render hidden 3D objects. By the time the
+          system completes the task, the script detects the tiny difference
+          between GPU renderings and stores it.
+        </li>
+      </ul>
+
+      <h3>3. WebGPU fingerprinting</h3>
+      <p>WebGPU is an improved version of WebGL.</p>
+
+      <p>
+        It does exactly what WebGPU does but with more added capabilities like
+        low CPU overhead, multi-threading, etc.
+      </p>
+
+      <h4>How does fingerprinting work?</h4>
+      <ul>
+        <li>
+          WebGPU sits closer to actual hardware, which means it transmits even
+          more accurate data than WebGL does.
+        </li>
+      </ul>
+      <ul>
+        <li>
+          It detects and stores structured information about adapter features,
+          exact texture formats, WGSL language support, etc.
+        </li>
+      </ul>
+      <ul>
+        <li>
+          This fingerprinting method is much faster and extremely accurate.
+        </li>
+      </ul>
+      <h3>4. Audio fingerprinting</h3>
+      <p>
+        The web audio API allows browsers to generate, process, and play audio
+        directly in the browser.
+      </p>
+
+      <h4>How does fingerprinting work?</h4>
+
+      <ul>
+        <li>
+          A script sends a silent sound wave through standard audio tools like
+          an oscillator and dynamic compressor to make the system actually
+          process the audio.
+        </li>
+      </ul>
+      <ul>
+        <li>
+          Sound waves are converted into long decimal numbers. To handle it,
+          hardware needs to round it and store it somewhere. This rounding
+          process depends on the combination of hardware and software the system
+          has.
+        </li>
+      </ul>
+      <ul>
+        <li>
+          The output has a difference of microscopic fractions at the end
+          compared to audio processed by someone else's computer.
+        </li>
+      </ul>
+      <ul>
+        <li>The web audio API script notices and records it.</li>
+      </ul>
+      <h3>5. Font fingerprinting</h3>
+      <p>A technique used to detect all installed fonts on the system.</p>
+
+      <h4>How does fingerprinting work?</h4>
+      <ul>
+        <li>
+          A script writes hidden text snippets on a page using non-existent
+          fonts so it falls back to the default font size.
+        </li>
+      </ul>
+      <ul>
+        <li>
+          Then it swaps that font for hundreds of well-known and widely used
+          fonts. (helvetica, sans-serif, verdana, etc...)
+        </li>
+      </ul>
+      <ul>
+        <li>
+          If the text size changes when measuring the pixel width, then the
+          script understands the font is installed on your system and records
+          it.
+        </li>
+      </ul>
+      <h3>6. Other common fingerprinting methods</h3>
+      <p>
+        JavaScript uses every possible way to collect much data from the website
+        other than graphics and audio.
+      </p>
+      <h4>6.1 Hardware specs</h4>
+      <p>Collects the CPU's exact core count and system RAM</p>
+      <h4>6.2 display parameters</h4>
+      <p>
+        Collects screen width, height, available workspaces, color depth, pixel
+        density, etc.
+      </p>
+
+      <h4>6.3 TLS/Network handshake</h4>
+
+      <p>
+        Collects the order and types of encryption cipher the connected HTTPS
+        network support
+      </p>
+
+      <p></p>
+
+      This is completely doable without Javascript too.
+
+      <h4>6.4 Time zone</h4>
+
+      <p>
+        Collects system preferences regarding language, timezone, keyboard
+        layouts, etc.
+      </p>
+
+      <h3>From Fingerprints to Individual Data Profiles</h3>
+      <p>
+        All this fingerprinting is done using a single scripting language,
+        JavaScript, by a single website.
+      </p>
+      <p>
+        With all these collected metrics, the site now knows almost everything
+        about the visitor's device and browser he used. So it combines all the
+        collected information into a single profile to create a detailed, unique
+        identity about the user. Then whenever this user revisits, maybe from a
+        different browser or using a VPN, the browser scans all data profiles it
+        has and tries to match currently detected information to existing
+        profile data to identify the user uniquely. This is called
+        "fingerprinting."
+      </p>
+
+      The interesting fact about fingerprints is that they can't be deleted or
+      tweaked by the user like clearing a cookie. Also, even a VPN can't protect
+      from fingerprinting.
+
+      <h2>Why prevent fingerprinting?</h2>
+      <ul>
+        <li>Cookies can be cleared; the fingerprint is permanent.</li>
+      </ul>
+      <ul>
+        <li>Your privacy is more important than you think. Seriously...</li>
+      </ul>
+      <ul>
+        <li>
+          A VPN can't protect you if they have a unique fingerprinting record on
+          you.
+        </li>
+      </ul>
+      <ul>
+        <li>
+          Effectively used for cross-browser session tracking and
+          identification.
+        </li>
+      </ul>
+      <ul>
+        <li>
+          Your real-life identity doesn't have to be linked to your normal
+          browsing data.
+        </li>
+      </ul>
+
+      They are building unique profiles about you, and they never expire. These
+      are shared across many business partners, and there is nothing to wonder
+      about when you see an ad while browsing about what you just talked about.
+      Also, this data is used in more disturbing ways than someone can imagine.
+      They know in the modern day, data is the valuable thing even though you
+      really don't know how valuable online privacy is.
+
+      <h2>What are the solutions?</h2>
+
+      Please avoid MV3 browsers, as the techniques/extensions I explain below
+      have very little effect on these browsers.
+
+      <h3>Ublock Origin</h3>
+      <ul>
+        <li>
+          Use an adblocker?. No. Ublock is not an adblocker. It's a content
+          blocker that does more than just blocking ads.
+        </li>
+      </ul>
+      <ul>
+        <li>
+          It stops the fingerprinting scripts from executing in the first place.
+        </li>
+      </ul>
+      <h3>No Script.</h3>
+      <ul>
+        <li>Gives much more control over scripts run on a website.</li>
+      </ul>
+      <ul>
+        <li>
+          You can decide to allow a website to run scripts at all, which scripts
+          to allow, and which ones to keep off for every website you visit.
+        </li>
+      </ul>
+
+      It is very inconvenient to use when it comes to normies. But it's the
+      user's problem and has nothing to do with this extension.
+
+      <h3>Privacy-hardened browsers.</h3>
+      <ul>
+        <p>
+          Many community-maintained browsers come out of the box with tweaks for
+          privacy, including fingerprinting protection.
+        </p>
+      </ul>
+      <h4>Recommended Browsers</h4>
+      <ul>
+        <li>Tor Browser (the king)</li>
+        <li>Librewolf</li>
+        <li>Mullvad</li>
+        <li>Brave Origin</li>
+      </ul>
+
+      Suggesting Brave Browser is controversial in privacy communities due to
+      its shady practices in the past, but at the same time, it prevents
+      fingerprinting effectively out of the box.
+
+      <h2>What makes fingerprinting more accurate?</h2>
+      <ul>
+        <li>Installing too many custom fonts.</li>
+        <li>
+          Using common browsers like Chromium, Chrome, Edge, Vivaldi, etc.
+        </li>
+        <li>Installing too many extensions.</li>
+        <li>trusting random fingerprint spoofing extensions or scripts.</li>
+        <li>Browser settings tweaks.</li>
+        <li>window resizing.</li>
+        <li>Hardware setup.</li>
+      </ul>
+      <h3>Browsers you must avoid</h3>
+      <ul>
+        <li>Google Chrome</li>
+        <li>Microsoft Edge</li>
+        <li>Vivaldi</li>
+        <li>Vanilla Firefox without tweaking for fingerprint resistance.</li>
+        <li>Standard safari</li>
+      </ul>
+
+      When it comes to vanilla Firefox, it out of the box provides no protection
+      against fingerprinting at all. But it can be tweaked for effective
+      fingerprint resistance.
+
+      <p>There are various user.js files available to harden Firefox.</p>
+      <ol>
+        <li>
+          <a href="https://github.com/yokoffing/Betterfox">Betterfox</a>
+        </li>
+        <li>
+          <a href="https://github.com/celenityy/Phoenix">Phoenix</a>
+        </li>
+        <li>
+          <a href="https://github.com/arkenfox/user.js/">Arkenfox</a>
+        </li>
+      </ol>
+      <h2>How to test your fingerprint detection score?</h2>
+      <p>
+        These are various free tools online to check how much the browser you
+        use exposes about you.
+      </p>
+      <h3>
+        <a href="https://coveryourtracks.eff.org/">Cover Your Tracks</a>
+      </h3>
+
+      <ul>
+        <li>Founded by the Electronic Frontier Foundation.</li>
+        <li>
+          Shows a detailed summary on what was protected and what was not.
+        </li>
+      </ul>
+      <h3><a href="https://amiunique.org/">Am I Unique</a></h3>
+      <ul>
+        <li>
+          Gives fingerprinting details based on your current settings and setup.
+        </li>
+      </ul>
+      <h3>
+        <a href="https://abrahamjuliot.github.io/creepjs/">CreepJS</a>
+      </h3>
+      <ul>
+        <li>
+          It dives deep into systems graphics drivers, WebGL, system fonts, and
+          audio frequencies and then gives a clear output on whether your
+          browser is capable enough to prevent fingerprinting.
+        </li>
+      </ul>
+
+      <p>Hope you find this article useful.</p>
+      <p>Thank you for reading.</p>
+    </main>
+    <footer>
+      Tux&Terminal 2026
+      <a href="/privacy.html">Privacy Policy</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,404 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style/style.css" />
+    <link rel="icon" href="/images/favicon.png" />
+    <title>Tux & Terminal</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/index.html">Tux & Terminal</a>
+        <div class="nav-items">
+          <a href="/index.html">Home</a> <a href="/articles.html">Articles</a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <h1>DNS: The Telephone Directory of the Internet</h1>
+
+      <p>
+        In the past everyone used direct IP address to visit websites over the
+        internet. Nowadays, people remember simple domain names. Instead of
+        remembering and typing a group of complex numbers, users are now able to
+        directly type the domain name (duckduckgo.com, privacyguides.org,
+        startpage.com, etc.) on the URL bar to visit and browse the website they
+        want.
+      </p>
+
+      <p>
+        Ever thought, what triggered this change? What allows us to comfortably
+        remember domain names instead of complex IP addresses of millions of
+        website? This service is called DNS.
+      </p>
+
+      <h2>What is DNS?</h2>
+
+      <p>
+        DNS stands for Domain Name System. DNS is the phone-book of internet.
+        Humans access information online via domain names like duckduckgo.com,
+        privacyguides.org, etc. while web browsers communicate and interact with
+        website via IP addresses. DNS stands as a bridge between them by
+        translating domain names into IP addresses.
+      </p>
+
+      <p>
+        By the implementation of DNS, users no longer have to remember IP
+        addresses of billions of websites. This also makes retrieving
+        information much easier and faster.
+      </p>
+
+      <h3>Domain names</h3>
+
+      <p>We can describe a Domain Name as a label for a website.</p>
+
+      <p>
+        Naturally, computers can't understand words, instead they use a
+        combination of numbers differentiated with (.) dots called IP address
+        (142.250.190.47) to find websites on the internet.
+      </p>
+
+      <p>
+        A domain name replaces these IP addresses with a memorable name. When a
+        user types the domain name like duckduckgo.com into a browser URL bar,
+        DNS looks up the number inside its massive public records of IP
+        addresses to find the IP corresponding to that domain name and helps you
+        to connect to it.
+      </p>
+      <h3>IP addresses</h3>
+      <p>
+        IP address stands for Internet Protocol Address. IP address is a unique
+        string of numbers assigned to every device connected to the internet. It
+        acts as a digital identity given to every internet user to uniquely
+        identify them.
+      </p>
+      <h4>Purpose</h4>
+      <p>
+        IP address lets computers, servers, and other devices related to
+        internet distinguish themselves from millions of other devices online.
+      </p>
+      <p>
+        It routes the internet traffic. When opening a website, the request uses
+        your IP address to tell the server where to send back the loaded website
+        so you can access them without issues.
+      </p>
+      <p>There are two types of IP addresses available today.</p>
+      <h4>IPV4</h4>
+      <p>
+        The old addressing format. This written as four sets of numbers
+        separated by dots.
+      </p>
+      <p>Looks like, 142.250.190.23</p>
+      <p>
+        The internet actually ran out of these addressing formats, and switched
+        to a new format.
+      </p>
+      <h4>IPV6</h4>
+      <p>
+        The modern standard of IP address formatting. Longer strings of numbers
+        and letters separated using colons.
+      </p>
+      <p>Looks like, 2607:f8b0:4005:802::200e.</p>
+      <p>It provides virtually unlimited number of IP address combinations.</p>
+      <p>Without IP addresses, a device cannot communicate over a network.</p>
+      <h3>URLs</h3>
+      <p>
+        URL stands for Uniform Resource Locator. It is the web address you type
+        into the URL box of the browser to reach a specific website.
+      </p>
+      <p>
+        It starts with
+        <strong>HTTPS (Hyper Text Transfer Protocol Secure)</strong>
+        known as
+        <strong>Protocol</strong>
+        and continues with
+        <strong>WWW (World Wide Web)</strong>
+        and the domain name.
+      </p>
+      <p>Looks like, https://www.duckduckgo.com</p>
+      <h4>Properties of a URL</h4>
+      <ul>
+        <li>
+          <strong>Protocol</strong>
+          : A set of rules the browser uses to talk to the server. It tells the
+          browser, how to fetch data securely.
+        </li>
+        <li>
+          <strong>Domain and Subdomain</strong>
+          : Name of the server, where website is hosted. (This is what a DNS
+          translates to IP address).
+        </li>
+        <li>
+          <strong>Path</strong>
+          : The specific page or path a user wants to access on that server that
+          stored inside the specific website you are in. For example,
+          https://www.duckduckgo.com/about
+        </li>
+        <li>
+          <strong>Parameters</strong>
+          : Extra details passed to a page, often used for tracking source,
+          search, or filter content like safe search.
+        </li>
+      </ul>
+      <h3>Domain extension</h3>
+      <p>
+        A
+        <strong>TLD (Top Level Domain)</strong>
+        is the ending of a domain name right after the last dot.
+      </p>
+      <p>For example,</p>
+      <ul>
+        <li>
+          duckduckgo.
+          <strong>com</strong>
+        </li>
+        <li>
+          nextdns.
+          <strong>io</strong>
+        </li>
+        <li>
+          privacyguides.
+          <strong>org</strong>
+        </li>
+      </ul>
+      <h4>TLD categories</h4>
+
+      <h5>gTLDs (Generic Top Level Domains)</h5>
+      <p>
+        These are general purpose domain name extensions used by anyone
+        globally.
+      </p>
+      <ul>
+        <li><strong>.com</strong></li>
+        <li><strong>.org</strong></li>
+        <li><strong>.net</strong></li>
+      </ul>
+
+      <h5>ccTLDs (Country Code Top Level Domains)</h5>
+      <p>
+        These are two letter domain extensions reserved specifically for
+        countries or territories.
+      </p>
+      <ul>
+        <li><strong>.ca</strong></li>
+        <li><strong>.de</strong></li>
+        <li><strong>.cn</strong></li>
+      </ul>
+
+      <h5>sTLDs (Sponsored Top Level Domains)</h5>
+      <p>
+        Restricted extensions managed by specific agencies or strict
+        authorities.
+      </p>
+      <ul>
+        <li><strong>.gov</strong></li>
+        <li><strong>.edu</strong></li>
+      </ul>
+      <h2>Working of DNS</h2>
+      <p>
+        The
+        <strong>DNS lookup</strong>
+        happens in the split second between typing a URL and the page loading.
+        In this time DNS completes the conversion process. There are 4 main DNS
+        servers involved in the lookup.
+      </p>
+      <ul>
+        <li>
+          <strong>Stub resolver</strong>
+          : The browser or ISP server handles the request.
+        </li>
+        <li>
+          <strong>Root server</strong>
+          : Points the request to right area based on the domain extension
+          (.org, io, .com, etc.).
+        </li>
+        <li>
+          <strong>TLD server</strong>
+          : Directs the request to specific domain's authority.
+        </li>
+        <li>
+          <strong>Authoritative name server</strong>
+          : Holds the exact IP address and delivers it back to the browser.
+        </li>
+      </ul>
+      <h3>DNS caching and speed</h3>
+      <p>
+        In reality, your browser doesn't have to perform these steps always.
+        Because there is a DNS caching functionality inside every modern
+        browsers we use.
+      </p>
+      <ul>
+        <li>
+          <strong>Browser DNS caching</strong>
+          : The browser remembers recent sites you visited on its local memory.
+          So there is no need to perform DNS Lookup every time you search for
+          the same website which significantly increases browsing speed.
+        </li>
+        <li>
+          <strong>TTL</strong>
+          : TTL stands for
+          <strong>Time To Live</strong>
+          . It means how long a DNS record is allowed to sit in memory until
+          browser forcing a fresh lookup.
+        </li>
+      </ul>
+      <h3>Local memory and caching</h3>
+      <p>
+        Actually local memory is a
+        <strong>temporary storage</strong>
+        located on the physical device you are using. When browser stores a DNS
+        entry locally, it holds onto that IP address mapping directly on your
+        local machine without connecting to any external server.
+      </p>
+      <p>
+        <strong>Local DNS caching</strong>
+      </p>
+      <p>
+        Local caching happens across three layers of the local machine you using
+        before reaching the network.
+      </p>
+      <ul>
+        <li>
+          <strong>Browser cache</strong>
+          : Modern browsers have their own internal DNS cache in memory to
+          resolve the sites recently visited faster.
+        </li>
+        <li>
+          <strong>OS cache</strong>
+          : If the browser doesn't find the entry in its own cache, it asks the
+          local OS resolver to store the cache in its system memory temporarily.
+        </li>
+        <li>
+          <strong>Router cache</strong>
+          : If the OS hasn't cached it, then the request goes directly to WiFi
+          router, which often keeps recent DNS lookup caches inside its cache
+          management functionality for all devices connected to it.
+        </li>
+      </ul>
+      <p>
+        If the DNS lookup fails to resolve the domain name from these three
+        local cache layers, it directly establish a connection to the server
+        over internet.
+      </p>
+      <h2>DNS Privacy &amp; Security Risks</h2>
+      <p>
+        Standard unencrypted DNS (over port 53) poses several security and
+        privacy risks to its users. Some of them are,
+      </p>
+      <ul>
+        <li>
+          <strong>ISP snooping</strong>
+          : Plain DNS queries are sent as readable clear text. Your
+          <strong>Internet Service Provider</strong>
+          can log everything, even if the website uses HTTPS.
+          <i>
+            (If the site is encrypted, then the site contents are hidden from
+            ISP, but they still know you visited this domain along with its
+            metadata.)
+          </i>
+        </li>
+        <li>
+          <strong>DNS leaks</strong>
+          : When using a VPN, unencrypted queries can bypass secure tunnels and
+          expose browsing data to local resolvers.
+          <i>
+            (All modern VPN services like ProtonVPN, MullvadVPN, IVPN, etc. have
+            its own encrypted DNS turned on along with VPN. So it doesn't matter
+            even if you are using a secure custom DNS, if you are using these
+            reputed VPN providers. Am not sure about what the case is when it
+            comes to VPNs you downloaded for free from play store, or others
+            like NordVPN, Surfshark, Private Internet Access, etc.)
+          </i>
+        </li>
+        <li>
+          <strong>DNS hijack and spoofing</strong>
+          : Attackers can easily intercept and log your browsing activity if you
+          use an unencrypted DNS server. They can even redirect you to a
+          malicious IP address.
+        </li>
+      </ul>
+      <h2>Encrypted DNS solutions</h2>
+      <p>
+        There are several well tested and recommended methods to secure your DNS
+        queries for free. These include,
+      </p>
+      <ul>
+        <li>
+          <strong>DOH (DNS Over HTTPS)</strong>
+          : This encrypt DNS queries using the standard port 443. So it blends
+          with normal web traffic, which makes ISPs cannot block or monitor
+          specific domain request.
+        </li>
+        <li>
+          <strong>DOT (DNS Over TLS)</strong>
+          : Encrypt DNS queries using standard port 853, securing queries system
+          level. However, DOT runs on its own dedicated port 853. So ISP can
+          easily identify that you are using an encrypted DNS.
+        </li>
+        <li>
+          <strong>Public resolvers</strong>
+          : There are many free privacy focused public resolvers available to
+          consider when the aim is encryption, faster resolution, customization
+          and privacy. These are trusted, non-logging and with advanced
+          features.
+        </li>
+      </ul>
+
+      Our ISPs provide DNS by default which covers almost all websites IP
+      available on the internet. But the main issue is that, it is unencrypted.
+      Unencrypted for decades, and they never even bothered to encrypt it and
+      they really don't want to. Also we are in a danger of direct government
+      influence. If government ordered to block any website, ISP must follow it.
+      So with a plain text DNS resolver, we are extremely censored. Also in the
+      past, many noticed that ISP intentionally throttling downloads, streaming
+      websites to save bandwidth for other users, even if we paid for the
+      network we use.
+
+      <p>
+        <strong>Recommended public resolvers</strong>
+      </p>
+      <ul>
+        <li>Cloudflare</li>
+        <li>Quad9</li>
+        <li>NextDNS</li>
+        <li>ControlD</li>
+        <li>Adguard DNS</li>
+        <li>Hagezi DNS</li>
+        <li>uBlock DNS</li>
+      </ul>
+      <h3>Common myths</h3>
+      <ul>
+        <li>
+          Encrypted DNS won't unblock sites if ISP blocked them using IP address
+          or SNI (Server Name Indication) filtering. Common DNS tampering
+          methods can be bypassed using Encrypted DNS.
+        </li>
+        <li>
+          Even if connection is now encrypted, ISP can see the domain names we
+          visit without a VPN.
+        </li>
+        <li>Encrypted DNS doesn't bypass ISP throttling.</li>
+        <li>
+          Encrypted DNS doesn't hide the data rate you consumed, you online
+          presence, protocol you used, etc.
+        </li>
+      </ul>
+      <h2>Conclusion</h2>
+      <p>
+        Encrypted DNS resolvers are very essential in our life as our every
+        communication over the internet to domain names happens over a DNS
+        query. As we said, if your queries are unencrypted, it is much easier to
+        intercept those request and log it by ISP or any eavesdroppers.
+      </p>
+
+      <p>Hope you found this article useful.</p>
+      <p>Thank you for reading.</p>
+    </main>
+    <footer>
+      Tux&Terminal 2026
+      <a href="/privacy.html">Privacy Policy</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,308 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style/style.css" />
+    <link rel="icon" href="/images/favicon.png" />
+    <title>Tux & Terminal</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/index.html">Tux & Terminal</a>
+        <div class="nav-items">
+          <a href="/index.html">Home</a> <a href="/articles.html">Articles</a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <h1>My Experience Using OpenSUSE</h1>
+
+      <p>
+        After spending one week using openSUSE Tumbleweed, I am writing a review
+        of my experience with it. What issues I faced, how well it served me
+        compared to other distributions, and whether I would recommend this to
+        new users, daily drivers, gamers, or programmers. The post will be
+        updated as I find useful things or run into bugs/crashes.
+      </p>
+
+      I use my system primarily for coding, daily browsing, basic image editing,
+      and document preparation. I do not play games at all.
+
+      <table>
+        <thead>
+          <tr>
+            <th><h3>Sl. No.</h3></th>
+            <th><h3>Specs</h3></th>
+            <th>
+              <h3>Value</h3>
+            </th>
+            <th>
+              <h3>Notes</h3>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="4"><h4>Hardware Details</h4></td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Variant</td>
+            <td>Tumbleweed</td>
+            <td>Rolling release with OpenQA checking</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Processor</td>
+            <td>13th Gen Intel(R) Core(TM) i5-1334U (12) @ 4.60 GHz</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>RAM</td>
+            <td>16 GB</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Storage</td>
+            <td>512 GB SSD</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>File System</td>
+            <td>Btrfs without Snapshots</td>
+            <td>
+              <p>
+                OpenSUSE tumbleweed is a rolling release distribution but still
+                I opted out of Snapshots as this is too storage consuming and
+                complex for me. I believe the OpenQA testing is more than enough
+                to prove its stability.
+              </p>
+
+              <p>
+                The general advice from community is not to rely on old
+                snapshots since updates ship so frequently.
+              </p>
+              <p>
+                BTW, I have a Live USB as a backup if something goes wrong like
+                a kernel boot failure or system corruption.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4">
+              <h4>Operating System Core Details</h4>
+            </td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Desktop Environment</td>
+            <td>KDE Plasma</td>
+            <td>
+              OpenSUSE has a well maintained release of KDE with latest features
+              and much more stable experience than competing distributions.
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Release Model</td>
+            <td>Rolling</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Update Command</td>
+            <td>zypper dup</td>
+            <td>
+              This is the main difference from Leap's
+              <strong>sudo zypper update</strong>
+              .
+            </td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>YaST</td>
+            <td>Removed</td>
+            <td>
+              By default YaST was included but since it is discontinued and
+              replaced, I completely removed it and locked from
+              auto-reinstallation during distribution updates.
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4"><h4>Personal Tweaks</h4></td>
+          </tr>
+
+          <tr>
+            <td>1</td>
+            <td>Flatpak Packages</td>
+            <td>Removed</td>
+            <td>
+              Out of the box flatpak is included with OpenSUSE tumbleweed
+              installation. But I'm not a fan of flatpak, so I intentionally
+              uninstalled it and limited myself to rpm packages, packman and
+              official repository.
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Third-Party Repositories</td>
+            <td>Packman</td>
+            <td>
+              Installed for certain proprietary codecs and drivers like
+              intel-media-driver.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>The installation Process</h2>
+
+      <p>
+        I used a 4GB USB Drive to install OpenSUSE. As the Live ISO needs more
+        space than what I have, I chose
+        <strong>Netinstall</strong>
+        . With
+        <strong>Rufus</strong>
+        I made the USB an installation medium and started the installation
+        process.
+      </p>
+      <p>
+        The installation screen was much different from the installation screen
+        of OpenSUSE Leap. For a beginner, it must be a headache to choose right
+        options and customize the installation how they want, but as I already
+        have experience installing ISO, I managed to choose everything as I
+        wanted. As given in the table above, I chose those options and the
+        installation process has been started
+      </p>
+      <p>
+        The Netinstall method was much slower than I expected, as must be a
+        mirror or server side issue as I have a fast internet already. I also
+        saw many in online communities complaining about the installation
+        process. Downloading resources over internet connection is very slower.
+        No matter how fast the connection is or using a VPN.
+        <strong
+          >After around 1:30 hrs the installation process completed.</strong
+        >
+      </p>
+      <h2>First Boot</h2>
+      <p>
+        After the installation process completed, system rebooted directly into
+        <strong>TTY mode</strong>
+        . Maybe a small bug. But a system reset fixed it and allowed me to boot
+        normally.
+      </p>
+      <h2>First Look</h2>
+      <p>
+        After logging in the experience was much smoother and clean. Just like
+        Leap no unnecessary things. Just a clean KDE Plasma installation. But I
+        noticed something different compared to Leap installation here.
+      </p>
+      <ul>
+        <li>Flatpak installed by default.</li>
+        <li>Have YaST even though it is officially discontinued.</li>
+        <li>
+          In tumbleweed, to update the system
+          <strong>sudo zypper dup</strong>
+          is used instead of sudo zypper update.
+        </li>
+        <li>
+          The entire distribution updated as a group which means, after an
+          update some apps can be removed, added or just re-installed.
+        </li>
+        <li>Not only the installation process but also zypper is slower.</li>
+        <li>Many KDE apps have been pre-installed.</li>
+      </ul>
+      <h2>Debloating Process</h2>
+      <p>
+        Even though the first look is so clean, there are still many things I
+        don't want. So, I started to clean up those. But I don't know the
+        commands like used in zypper like apt or dnf as I just tested Leap in
+        the past. So learned those commands used to install, update, clean, or
+        purge data. It was not that hard to learn as just some keywords differed
+        compared to apt, dnf, pacman.
+      </p>
+      <p>Then I removed,</p>
+      <ul>
+        <li>
+          Entire Flatpak and limited myself to rpm packages and official
+          repository.
+        </li>
+        <li>Removed the pre-installed KDE applications.</li>
+        <li>Removed YaST and locked it from auto re-install.</li>
+      </ul>
+      <h2>Third-Party Repositories</h2>
+      <p>
+        Then I installed a third-party repository called
+        <strong>Packman</strong>
+        for proprietary codecs and media drivers. Just like we install Backports
+        on Debian and RPM Fusion on Fedora.
+      </p>
+      <h2>Zypper</h2>
+      <p>
+        <strong>Zypper</strong>
+        is the default package manager of OpenSUSE distribution. It is advanced
+        and has many more features to compete and stay up-to-date against other
+        package managers like apt, dnf and pacman. But zypper is much slower
+        than other package managers I used. Zypper performs badly on both the
+        downloading process and other tasks like removing software, running
+        python script, etc.
+      </p>
+      <p>
+        I wonder why such a widely used Linux distribution has done nothing
+        about the slowness of their own package manager for years.
+      </p>
+
+      <h2>The Removal of YaST</h2>
+
+      <p>
+        The replacement of YaST with tools like agama (web-installer), cockpit
+        (web-based system management tool) and myrlyn (package management) was
+        the worst move in my opinion. New replacements are decent but they never
+        managed to completely replace the advanced functionalities YaST
+        provided. YaST was an all-in-one tool and I remember many users just
+        installed OpenSUSE because of its easy system management with YaST.
+      </p>
+      <p>
+        I'm still wondering, why they dropped YaST for these less efficient and
+        more complex tools. Also with their slower package manager and YaST
+        replacement, many users now have a reason to consider another distro
+        maybe. But OpenQA is still there, which is awesome.
+      </p>
+
+      <h2>Conclusion</h2>
+
+      <p>
+        OpenSUSE is for someone who wants rolling release but never wants to
+        break their system at any point. With much simpler configurations and
+        out of the box decent tweaks I recommend this distribution for everyone
+        including everyday users, developers, gamers, etc.
+      </p>
+
+      <p>
+        While many other distributions struggle to maintain various desktop
+        environments like KDE, XFCE and GNOME, OpenSUSE gives a much more stable
+        and up-to-date experience with all three out of the box
+      </p>
+
+      The stability comes from OpenQA, an automated testing framework that other
+      rolling distributions like Arch, CachyOS, EndeavourOS, etc. lack.
+
+      <p>
+        You must install OpenSUSE once in your life and
+        <strong>there ends your distribution-hopping</strong>
+        .
+      </p>
+
+      <p>Thank you for reading.</p>
+    </main>
+    <footer>
+      Tux&Terminal 2026
+      <a href="/privacy.html">Privacy Policy</a>
+    </footer>
+  </body>
+</html>

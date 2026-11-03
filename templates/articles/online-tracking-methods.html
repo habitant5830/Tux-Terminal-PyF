@@ -1,0 +1,526 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style/style.css" />
+    <link rel="icon" href="/images/favicon.png" />
+    <title>Tux & Terminal</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/index.html">Tux & Terminal</a>
+        <div class="nav-items">
+          <a href="/index.html">Home</a> <a href="/articles.html">Articles</a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <h1>Effective Web Tracking Methods in 2026: Explained</h1>
+
+      <p>
+        In 2026, the web and the technologies used in it have evolved a lot.
+        This has also led to the effectiveness of online tracking methods, which
+        made it nearly impossible to prevent. Once we defined online tracking
+        just by a simple cookie. Now all the websites we use, even basic ones,
+        are deploying dozens of tracking techniques on their websites with the
+        help of big tech companies. Some are visible while many are invisible.
+        At the end, they identify, profile, and follow users across the internet
+        24x7.
+      </p>
+      <p>
+        A lot happened in recent years that can drastically decrease the online
+        privacy of Internet users. The rise of Google's privacy sandbox APIs and
+        sophisticated fingerprinting techniques reshaped the internet.
+        Meanwhile, regulations like GDPR, CCPA, and digital market acts have
+        pushed trackers towards more covert methods that don't even require user
+        consent.
+      </p>
+      <p>
+        <strong>
+          To avoid cookie banners and consent requirements, popular
+          advertisements and tech platforms shifted toward more covert,
+          server-sided identification methods like browser fingerprinting,
+          privacy sandbox, etc.
+        </strong>
+      </p>
+      <p>
+        This article explains various browser tracking methods that are
+        effectively used in 2026 to track and profile users. Also, we discuss
+        the solutions for each of the tracking methods. What strategy will work
+        and what will not work.
+      </p>
+
+      <strong>Important notice</strong>
+      : Most tracking methods mentioned below are highly effective in browsers
+      without built-in privacy protections like Google Chrome, Microsoft Edge,
+      Opera, stock Chromium, and Vivaldi. However, they have little to no effect
+      on privacy-hardened browsers like Tor Browser, Brave, LibreWolf, Mullvad,
+      Zen, or a hardened Firefox setup.
+
+      <h2>1. First-Party Cookies</h2>
+      <p>
+        Cookies are a mechanism that is used to
+        <strong
+          >store data about websites you visit, your preferences, etc. locally
+          in your browser</strong
+        >
+        .
+      </p>
+      <p>
+        The
+        <strong>first party</strong>
+        term indicates the
+        <strong>actual domain you are visiting</strong>
+        (root domain).
+      </p>
+      <p>
+        Cookies were a very good idea, which made a user's browsing session
+        functional and more user-friendly. As always, no matter how good a
+        functionality is, big tech companies like Google, Meta, Amazon, etc.
+        always find a way to misuse it. With the effective tracking mechanisms
+        they developed, cookies are now used for tracking users across sites.
+      </p>
+      <p>For example:</p>
+      <p>
+        <i>
+          You logged in to YouTube on google chrome, and that's your primary
+          browser. You visit a news site in that same browser, and Google gets
+          your interaction data linked to your own Google ID.
+        </i>
+      </p>
+      <p>
+        This happened because nowadays every website has embedded Google,
+        Facebook, and various social media trackers. So even if you have a
+        wide-spectrum ad blocker like uBlock Origin, AdGuard, Privacy Badger,
+        etc. There are still a Google login button, social icons, and embedded
+        videos on that site. Not just Google but also Spotify widgets, X tweets,
+        Instagram embed posts, etc. So no matter what protection you have, with
+        a logged-in session, all these companies easily collect your data.
+      </p>
+      <h3>Protections that won't prevent this</h3>
+      <ul>
+        <li>Blocking third-party cookies won't work.</li>
+        <li>
+          Script blockers are not reliable, because you need to enable some of
+          those scripts anyway for a functional website.
+        </li>
+        <li>
+          Your DNS blocker won't work. The DNS blocker uses DNS block lists to
+          detect and block trackers; most lists only block third-party domains,
+          as a blocking of first-party will break the actual website.
+        </li>
+      </ul>
+      <h3>Effective prevention strategies</h3>
+      <ul>
+        <li>Isolating browsers based upon your needs.</li>
+        <li>For example,</li>
+        <li>Firefox for daily browsing.</li>
+        <li>Brave for Google services.</li>
+        <li>Another browser for meta products.</li>
+        <li>
+          Use in-built browser protections like Brave Shield and Firefox
+          Enhanced Tracking Protection.
+          <strong>
+            Firefox's total cookie protection is especially designed to protect
+            you from first-party cookie tracking.
+          </strong>
+        </li>
+        <li>
+          Use extensions like uBlock Origin, AdGuard, Privacy Badger, etc...
+        </li>
+        <li>
+          Use Firefox Containers (or Brave's built-in container features) to
+          isolate logins within separate browser profiles
+        </li>
+      </ul>
+      <h2>2. Browser Fingerprinting</h2>
+      <p>
+        It is by far the most powerful, accurate, and effective method deployed
+        using scripts on every single website.
+      </p>
+      <p>
+        Unlike cookies, fingerprinting stores nothing locally on your computer.
+        Instead, it collects dozens of hardware and software signals to
+        <strong>generate a near-unique fingerprint</strong>
+        , which is
+        <strong>sent directly to a tracking server</strong>
+        to identify you across future visits.
+      </p>
+
+      Read more about fingerprinting
+      <a href="../fingerprinting"><strong>here</strong></a>
+      .
+
+      <h3>Protections that won't prevent this</h3>
+      <ul>
+        <li>
+          Spoofing your user agent won't work because from your Canvas rendering
+          and font engine, which are specific to your hardware and OS, they can
+          easily gain your hardware and software data.
+        </li>
+        <li>
+          Deletion of cookies or local storage has no effect on collected
+          fingerprints, as they are stored on the server.
+        </li>
+        <li>
+          An ad blocker DNS won't help, as this fingerprinting script has
+          nothing to do with a DNS. This purely happened inside the browser.
+        </li>
+      </ul>
+      <h3>Effective prevention strategies</h3>
+      <ul>
+        <li>
+          Use of privacy-hardened browsers like Brave, LibreWolf, and Mullvad
+          will work, as these are specifically tweaked for user privacy.
+        </li>
+        <li>
+          Blocking all scripts and allowing only necessary ones might limit the
+          info that can be collected.
+        </li>
+        <li>
+          Tor browser randomizes your identity and doesn't have a permanent
+          record. So it might help in most cases.
+        </li>
+      </ul>
+      <h2>3. Third-party cookies.</h2>
+      <p>
+        Third-party cookies are used to
+        <strong>track you across websites</strong>
+        . But actually, it is the easiest tracking method to block and prevent
+        so far. Even Google proposed its 'privacy sandboxing' idea (which is
+        abandoned) to wipe third-party cookies from the web. They might have
+        understood that this is a very ineffective method of online tracking.
+      </p>
+      <h3>Effective prevention strategies</h3>
+      <ul>
+        <li>
+          Open your browser's site settings and choose to block third-party
+          cookies from the cookie section.
+        </li>
+        <li>No website will break at all.</li>
+      </ul>
+      <h2>4. Supercookies.</h2>
+      <p>
+        These are a type of
+        <strong>unkillable cookie</strong>
+        .
+      </p>
+      <p>
+        Supercookies exploit browser mechanisms that were never designed for
+        tracking in the first place, making them extremely harder to detect and
+        remove.
+      </p>
+      <h3>HSTS Supercookies.</h3>
+      <p>
+        HSTS stands for HTTP Strict Transport Security. It tells the browser to
+        always use HTTPS for specific websites. Trackers abuse this by loading a
+        unique combination of subdomains over HTTPS and some in HTTP (eg:-
+        tracker.tracker1.com, tracker.tracker2.com). The browser's HSTS cache
+        then stores a binary pattern that functions as a unique identifier.
+      </p>
+      <p>
+        Clearing this requires manual resetting of HSTS settings, which many
+        users are not even aware of.
+      </p>
+      <h3>Favicon cache tracking.</h3>
+      <p>
+        It misuses the fact that browser cache favicons are stored separately
+        from regular browsing data. A tracker assigns each user a unique
+        sequence of redirects through subdomains with distinct favicons on
+        constant visits. Then the browser's favicon cache reveals the stored
+        pattern.
+      </p>
+      <p>
+        This is an effective cookie that even survives incognito mode, cache
+        clearing, and VPNs.
+      </p>
+      <h3>TLS Session ID Tracking.</h3>
+      <p>
+        TLS session resumption mechanisms (session IDs and session tickets)
+        allow servers to identify returning connections without the need of a
+        full handshake. Even if it is designed for performance, it can also be
+        used as a short-living tracking identifier.
+      </p>
+      <p>
+        Even though the life span of these cookies is short, they are virtually
+        invisible to users.
+      </p>
+      <h3>Evercookies</h3>
+      <p>
+        This writes a single tracking ID simultaneously to 10+ different browser
+        vectors, such as:
+      </p>
+      <ul>
+        <li>HTML5 LocalStorage &amp; SessionStorage</li>
+        <li>IndexedDB</li>
+        <li>Web Workers / Cache API</li>
+        <li>CSS history &amp; Canvas fingerprinting</li>
+      </ul>
+      <p>
+        Then even if you delete 9 traces stored, the script will find one
+        survived trace and silently restore 9 others on your next visit.
+      </p>
+      <h3>Protections that won't prevent this</h3>
+      <ul>
+        <li>Normally clearing cookies.</li>
+        <li>Incognito/private browsing.</li>
+        <li>Ad-blocking DNS.</li>
+        <li>
+          Using an adblock extension that lacks built-in storage isolation.
+        </li>
+      </ul>
+      <h3>Effective prevention strategies</h3>
+      <ul>
+        <li>
+          Use browsers with this built-in first-party cookie isolation, like
+          Brave, Firefox, or its forks.
+        </li>
+        <li>
+          Blocking persistent storage permission via browser site settings.
+        </li>
+        <li>
+          Use extensions like uBlock Origin, AdGuard, or ClearURLs, which have
+          the ability to do URL parameter stripping functionality.
+        </li>
+        <li>
+          Containers/profiles isolate execution contexts. So a super cookie
+          can't interact with it or link activity to it.
+        </li>
+      </ul>
+      <h2>5. ETag Tracking.</h2>
+      <p>
+        <strong>ETags are HTTP cache validators</strong>
+        . When a browser requests a resource, the server sends back an ETag
+        header with a unique identifier. Then on subsequent requests, the
+        browser sends back the ETag to the server to ask, "Is that changed?".
+        Each user has a unique ETag value, and this turns the browser cache into
+        a tracking cookie.
+      </p>
+      <p>
+        Because ETags are stored in the HTTP cache, and not in the cookie jar, a
+        cookie deletion won't delete it.
+      </p>
+      <h3>Protections that won't prevent this</h3>
+      <ul>
+        <li>clearing cookies.</li>
+        <li>
+          blocking first-party or third-party cookies, as the generation of
+          ETags is a core feature of the HTTP web protocol, which is used for
+          browser caching. It is completely independent from the Cookie API or
+          Javascript.
+        </li>
+        <li>Incognito/private browsing mode.</li>
+        <li>DNS Protection.</li>
+      </ul>
+      <h3>Effective prevention strategies</h3>
+      <ul>
+        <li>
+          Instead of clearing only cookies, a complete wipe of temp files and
+          the HTTP cache can help.
+        </li>
+        <li>
+          Firefox's enhanced tracking protection and Brave browser's aggressive
+          tracking protection methods prevent this type of tracking.
+        </li>
+        <li>Extensions Like Ublock Origin, Adguard and ClearURLs.</li>
+      </ul>
+      <h2>6. Bounce tracking.</h2>
+      <p>
+        When you click a link, instead of a direct connection to the
+        destination, you will be redirected to a tracking domain. By doing this,
+        the tracking domain sets a first-party cookie in the user's browser and
+        associates the user's identity across sites.
+      </p>
+      <h3>Protections that won't prevent this</h3>
+      <ul>
+        <li>
+          A DNS protection may block the domain you are redirected to if it has
+          the domain in its blocklist. It cannot prevent the redirection itself.
+        </li>
+        <li>blocking third-party cookies</li>
+        <li>incognito mode</li>
+      </ul>
+      <h3>Effective prevention strategies</h3>
+      <ul>
+        <li>
+          In-built tracking protection methods in browsers like Firefox and
+          Brave will block it before it launches.
+        </li>
+        <li>
+          Browser extensions like AdGuard and UBlock Origin block it right after
+          the page loads completely.
+        </li>
+        <li>
+          Certain extensions like Fast Forward are specifically built to prevent
+          this.
+        </li>
+      </ul>
+      <h2>7. CNAME cloaking.</h2>
+      <p>
+        It is a DNS-level tracking technique. A website creates a subdomain
+        (like track.domain.com) that resolves via a CNAME record to a
+        third-party tracking server. From the browser perspective, the tracking
+        request looks like a first-party as it goes to a subdomain of the site
+        you are currently in.
+      </p>
+      <h3>Protections that won't prevent this</h3>
+      <ul>
+        <li>Blocking third-party cookies</li>
+        <li>
+          Using DNS resolvers that don't have any protections against ads,
+          tracking, or threats.
+        </li>
+        <li>Content blockers or adblockers with basic blocklists</li>
+      </ul>
+      <h3>Effective prevention strategies</h3>
+      <ul>
+        <li>
+          Use DNS servers with added protection against CNAME cloaking.
+          Providers like NextDNS, ControlD, DNS0, and Adguard Private DNS have
+          protection against these types of tracking mechanisms.
+        </li>
+        <li>
+          Using script blockers like Noscript helps by blocking dynamic
+          Javascript globally.
+        </li>
+        <li>
+          Ublock origin, Brave shields, and Firefox tracking protection help by
+          performing real-time CNAME uncloaking. (Advanced block lists like
+          Hagezi lists are required.)
+        </li>
+      </ul>
+      <h2>8. Login Fingerprinting.</h2>
+      <p>
+        By using this method websites can detect whether you are logged into
+        popular services like Google, Facebook, Twitter, Amazon, etc. by
+        embedding hidden resources that behave differently for logged-in and
+        logged-out users. A third-party site can build a profile of your online
+        accounts. This profile is remarkably stable and uniquely identifying.
+      </p>
+      <p>
+        For example, if you're logged in to Gmail, LinkedIn, and Spotify
+        simultaneously in the same browser, then very few other users share that
+        exact information.
+      </p>
+      <h3>Protections that won't prevent this</h3>
+      <ul>
+        <li>Incognito/private browsing mode.</li>
+        <li>DNS Protection.</li>
+        <li>Third-party cookie blocking.</li>
+        <li>Clearing cache or browsing history.</li>
+      </ul>
+      <h3>Effective prevention strategies</h3>
+      <ul>
+        <li>Isolate browser sessions with multiple browsers.</li>
+        <li>
+          Use container extensions like Firefox Multi-Account Containers. They
+          completely avoid login fingerprinting by keeping browsing sessions
+          isolated within separate tabs.
+        </li>
+        <li>
+          Use tracking protections offered by browsers like Firefox and Brave.
+        </li>
+        <li>
+          Blocking unneeded scripts on a website usually works, but it makes
+          browsing less user-friendly.
+        </li>
+      </ul>
+      <h2>
+        9. Google Privacy Sandbox API. (
+        <strong>Discontinued</strong>
+        )
+      </h2>
+      <p>
+        Google's privacy sandbox is a
+        <strong>failed industry experiment</strong>
+        . Without eliminating complete tracking, it moves tracking into
+        browser-mediated APIs that aim to preserve some advertising
+        functionality while limiting individual identification.
+      </p>
+      <h3>Topics API.</h3>
+      <ul>
+        <li>
+          Replace third-party cookie tracking with interest-based targeting.
+        </li>
+        <li>
+          The browser observes which websites you visit and assigns you to a
+          broad interest category each week. Then advertisers request your
+          recent topics to serve relevant ads without knowing your browsing
+          history.
+        </li>
+      </ul>
+      <h3>Protected Audience API.</h3>
+      <ul>
+        <li>
+          It enables remarketing and custom audience tracking without
+          third-party cookies.
+        </li>
+        <li>
+          When a user visits a website, it can add you to an "interest group,"
+          which is stored locally. Then later you visit a website with blank ad
+          space; an on-device auction determines which ads to display in the
+          empty slot based on the collected interests.
+        </li>
+      </ul>
+      <h3>Attribution Reporting API.</h3>
+      <ul>
+        <li>
+          This lets advertisers measure ad conversions without cross-site
+          tracking.
+        </li>
+        <li>
+          It sends individual reports like "one user clicked on an ad and
+          purchased something." It also sends group reports like "50 people
+          clicked on the same ad and bought the product."
+        </li>
+        <li>
+          The browser intentionally delays the report and adds a bit of fake
+          noise or random data to hide the user's real identity.
+        </li>
+      </ul>
+
+      <strong>Noise</strong>
+      : Fake or altered information that is intentionally added to real data.
+
+      <h3>Status of Google Privacy Sandbox API in 2026</h3>
+      <p>
+        Google completely abandoned this plan after years of pushback from
+        privacy groups, regulators, and advertisers. They officially retired the
+        Privacy Sandbox APIs and decided to keep third-party cookies in Chrome.
+      </p>
+      <h2>Conclusion.</h2>
+      <p>
+        Every tracking method explained above shares one fundamental base: that
+        the browser environment remains the same between visits and across
+        sites.
+        <strong>Browser/profile isolation</strong>
+        solves most of the issues. When each session uses a completely different
+        profile, metrics like fingerprint, cookies, storage, etc... are
+        completely isolated. So, trackers see no flaws to take advantage of.
+        Each profile appears like different users.
+      </p>
+      <h3>The strictest protections users need against tracking</h3>
+      <ul>
+        <li>
+          A strict browser with built-in protection like Brave Shield and
+          Firefox tracking protection.
+        </li>
+        <li>Use extensions like ublock origin, fast forward, and noscript.</li>
+        <li>Browser isolation or profile isolation.</li>
+        <li>Clear browsing data after each session.</li>
+        <li>
+          Use a privacy-protecting DNS resolver like NextDNS, CloudDNS, etc.
+        </li>
+        <li>Block unnecessary scripts and iframes by default.</li>
+      </ul>
+      <p>Hope this article is helpful to you.</p>
+      <p>Thank you for reading.</p>
+    </main>
+    <footer>
+      Tux&Terminal 2026
+      <a href="/privacy.html">Privacy Policy</a>
+    </footer>
+  </body>
+</html>
