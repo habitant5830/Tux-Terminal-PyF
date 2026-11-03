@@ -18,8 +18,24 @@ class Todo(db.Model):
     def __repr__(self):
         return '<Task %r>' % self.id
 
-@app.route("/", methods=['GET', 'POST'])
+@app.route("/")
 def index():
+    return render_template("index.html")
+
+@app.route("/articles.html")
+def articles():
+    return render_template("articles.html")
+
+@app.route("/about.html")
+def about():
+    return render_template("about.html")
+
+@app.route("/privacy.html")
+def privacy():
+    return render_template("privacy.html")
+
+@app.route("/todo.html", methods=['GET', 'POST'])
+def todo():
     if request.method == 'POST':
         task_content = request.form['content']
         new_task = Todo(content=task_content)
@@ -32,7 +48,7 @@ def index():
             return 'There was a problem.'
     else:
         tasks = Todo.query.order_by(Todo.date_created).all()
-        return render_template("index.html", tasks=tasks)
+        return render_template("todo.html", tasks=tasks)
 
 @app.route("/delete/<int:id>")
 def delete(id):
@@ -45,7 +61,7 @@ def delete(id):
     except:
         return 'There was a problem.'
 
-@app.route("/update/<int:id>", methods=['GET', 'POST'])
+@app.route("/update/<int:id>", methods=['GET', 'POSsour T'])
 def update(id):
     task = Todo.query.get_or_404(id)
 
