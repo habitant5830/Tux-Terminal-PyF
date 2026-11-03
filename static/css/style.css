@@ -4,3 +4,12 @@ body{
     align-items: center;
     font-family: sans-serif;
 }
+
+table{
+    border: 1px solid black;
+}
+
+th, td{
+    border: 1px solid black;
+    padding : 10px;
+}
