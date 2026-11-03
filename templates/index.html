@@ -9,4 +9,23 @@
         </div>
         <div class="welcome-text">Welcome to Tux & Terminal</div>
     </div>
+    <div class="article-preview-section">
+        <div class="home-article-container">
+            {% for home_article in home_articles %}
+            <div class="article">
+                <div>
+                    <p class="tag-pill">{{ home_article.tag }}</p>
+                </div>
+                <a class="article-title" href="{{ home_article.link }}"
+                >{{ home_article.title }}</a>
+                <div>
+                    <p class="summary">{{ home_article.summary }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="explore-button-section">
+        <div class="explore-button"><a href="{{ url_for('articles') }}">Explore more...</a></div>
+    </div>
 {% endblock %}

@@ -19,9 +19,47 @@ class Todo(db.Model):
         return '<Task %r>' % self.id
 
 # App routes
+home_articles = [
+               {
+                   'tag': "PRIVACY",
+                   'title': "Why You Should Always Use a VPN",
+                   'summary':
+                       "Explaining the importance of using VPNs these days and recommending some highly trusted VPN providers that are known to be secure and have a strict no-logs policy.",
+                   'link': "/articles/why_use_a_vpn.html",
+               },
+               {
+                   'tag': "REVIEW",
+                   'title': "My Experience Using OpenSUSE",
+                   'summary':
+                       "A review on OpenSUSE after 1 week of use. Everything covered about the advantages, disadvantages and what can be improved as an enterprise linux distribution.",
+                   'link': "/articles/opensuse-1week-review.html",
+               },
+               {
+                   'tag': "ENSHITTIFICATION",
+                   'title': "The Era of Heavy Bloated Web",
+                   'summary':
+                       "Explaining why modern websites are more bloated and resource hungry.",
+                   'link': "/articles/bloated-web.html",
+               },
+               {
+                   'tag': "NETWORK",
+                   'title': "DNS: The Telephone Directory of the Internet",
+                   'summary':
+                       "Explaining how DNS works and why its important to choose a secure DNS provider!",
+                   'link': "/articles/domain-name-system.html",
+               },
+    ]
+
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("index.html", home_articles=home_articles)
+
+# late-binding closure fix
+for home_article in home_articles:
+    slug = home_article['link'].strip('/')
+    def make_view(slug=slug, home_article=home_article):
+        return render_template('index.html', home_article=home_article)
+    app.add_url_rule(home_article['link'], endpoint=f'home_article_{slug}', view_func=make_view)
 
 @app.route("/articles.html")
 def articles():
@@ -152,13 +190,13 @@ articles = [
         'link': "/articles/nihilism.html",
     },
 ]
-print(articles[0]['link'])
+
 # late-binding closure fix
 for article in articles:
     slug = article['link'].strip('/')
     def make_view(slug=slug, article=article):
         return render_template('articles.html', article=article)
-    app.add_url_rule(article['link'], endpoint=f'post_{slug}', view_func=make_view)
+    app.add_url_rule(article['link'], endpoint=f'article_{slug}', view_func=make_view)
 
 # Todo list
 @app.route("/todo.html", methods=['GET', 'POST'])
