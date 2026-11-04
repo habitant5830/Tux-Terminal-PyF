@@ -2,6 +2,8 @@ import requests
 from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+from bs4 import BeautifulSoup
+import lxml
 
 app = Flask(__name__)
 
@@ -17,6 +19,49 @@ class Todo(db.Model):
 
     def __repr__(self):
         return '<Task %r>' % self.id
+
+# Todo list
+@app.route("/todo.html", methods=['GET', 'POST'])
+def todo():
+    if request.method == 'POST':
+        task_content = request.form['content']
+        new_task = Todo(content=task_content)
+
+        try:
+            db.session.add(new_task)
+            db.session.commit()
+            return redirect('/')
+        except:
+            return 'There was a problem.'
+    else:
+        tasks = Todo.query.order_by(Todo.date_created).all()
+        return render_template("todo.html", tasks=tasks)
+
+@app.route("/delete/<int:id>")
+def delete(id):
+    task_to_delete = Todo.query.get_or_404(id)
+
+    try:
+        db.session.delete(task_to_delete)
+        db.session.commit()
+        return redirect('/')
+    except:
+        return 'There was a problem.'
+
+@app.route("/update/<int:id>", methods=['GET', 'POSsour T'])
+def update(id):
+    task = Todo.query.get_or_404(id)
+
+    if request.method == 'POST':
+        task.content = request.form['content']
+
+        try:
+            db.session.commit()
+            return redirect('/')
+        except:
+            return 'There was a problem.'
+    else:
+        return render_template('update.html', task=task)
 
 # App routes
 home_articles = [
@@ -61,15 +106,15 @@ for home_article in home_articles:
         return render_template(f'{slug}')
     app.add_url_rule(home_article['link'], endpoint=f'home_article_{slug}', view_func=make_view)
 
-@app.route("/articles.html")
+@app.route("/articles")
 def articles():
     return render_template("articles.html", articles=articles)
 
-@app.route("/about.html")
+@app.route("/about")
 def about():
     return render_template("about.html")
 
-@app.route("/privacy.html")
+@app.route("/privacy")
 def privacy():
     return render_template("privacy.html")
 
@@ -198,48 +243,49 @@ for article in articles:
         return render_template(f'{slug}')
     app.add_url_rule(article['link'], endpoint=f'article_{slug}', view_func=make_view)
 
-# Todo list
-@app.route("/todo.html", methods=['GET', 'POST'])
-def todo():
-    if request.method == 'POST':
-        task_content = request.form['content']
-        new_task = Todo(content=task_content)
+# Feed parsing
+# pretend like a browser
+def rss_feed():
+    urls = [
+        'https://9to5linux.com/feed/',
+        'https://www.gamingonlinux.com/article_rss.php?newsonly',
+    ]
 
-        try:
-            db.session.add(new_task)
-            db.session.commit()
-            return redirect('/')
-        except:
-            return 'There was a problem.'
-    else:
-        tasks = Todo.query.order_by(Todo.date_created).all()
-        return render_template("todo.html", tasks=tasks)
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '}
+    Feeds = []
 
-@app.route("/delete/<int:id>")
-def delete(id):
-    task_to_delete = Todo.query.get_or_404(id)
+    for url in urls:
+        resp = requests.get(url, headers=headers)
+        soup = BeautifulSoup(resp.content, 'xml')
+        # obtain all entries on the feed url
+        items = soup.find_all('item')
 
-    try:
-        db.session.delete(task_to_delete)
-        db.session.commit()
-        return redirect('/')
-    except:
-        return 'There was a problem.'
+        # RSS 2.0 format
+        for item in items:
+            title = item.title.text
+            published_date = item.pubDate.text
+            formatted_date = datetime.strptime(published_date, '%a, %d %b %Y %H:%M:%S %z')
+            date = formatted_date.strftime('%a, %d %b %Y %I:%M %p')
 
-@app.route("/update/<int:id>", methods=['GET', 'POSsour T'])
-def update(id):
-    task = Todo.query.get_or_404(id)
+            description = item.description # Prints none if nothing
+            link = item.link.text #
+            # Double parsing (xml parsing + html parsing)
+            text = ''
+            if description:
+                desc_soup = BeautifulSoup(description.get_text(), 'html.parser')
+                for p in desc_soup.find_all('p'):
+                    # Skip paragraphs that are empty or image-only
+                    if p.get_text().strip():
+                        text = p.get_text()
+                        break  # first real text paragraph is the summary
 
-    if request.method == 'POST':
-        task.content = request.form['content']
+            Feeds.append({'title': title, 'date': date, 'link': link, 'description': text})
+        return Feeds
 
-        try:
-            db.session.commit()
-            return redirect('/')
-        except:
-            return 'There was a problem.'
-    else:
-        return render_template('update.html', task=task)
+@app.route('/live-feed')
+def live_feed():
+    feeds = rss_feed()
+    return render_template("live-feed.html", feeds=feeds)
 
 if __name__ == "__main__":
     with app.app_context():

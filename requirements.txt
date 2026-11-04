@@ -3,3 +3,5 @@ requests
 flask
 gunicorn
 flask_sqlalchemy
+bs4
+lxml

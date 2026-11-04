@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block head %}
+{% endblock %}
+{% block body %}
+<div class="article-preview-section">
+    <div class="live-feed-container">
+        {% for feed in feeds %}
+        <div class="article">
+            <a class="feed-title" href="{{ feed.link }}"
+            >{{ feed.title }}</a>
+            <div>
+                <p class="date-pill">{{ feed.date }}</p>
+            </div>
+            <div>
+                <p class="summary">{{ feed.description }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
