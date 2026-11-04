@@ -1,22 +1,8 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/style/style.css" />
-    <link rel="icon" href="/images/favicon.png" />
-    <title>Tux & Terminal</title>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <a href="/index.html">Tux & Terminal</a>
-        <div class="nav-items">
-          <a href="/index.html">Home</a> <a href="/articles.html">Articles</a>
-        </div>
-      </nav>
-    </header>
-    <main>
+{% extends "base.html" %}
+
+{% block head %}
+{% endblock %}
+{% block body %}
       <h1>Effective Web Tracking Methods in 2026: Explained</h1>
 
       <p>
@@ -517,10 +503,4 @@
       </ul>
       <p>Hope this article is helpful to you.</p>
       <p>Thank you for reading.</p>
-    </main>
-    <footer>
-      Tux&Terminal 2026
-      <a href="/privacy.html">Privacy Policy</a>
-    </footer>
-  </body>
-</html>
+    {% endblock %}

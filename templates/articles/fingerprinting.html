@@ -1,22 +1,8 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/style/style.css" />
-    <link rel="icon" href="/images/favicon.png" />
-    <title>Tux & Terminal</title>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <a href="/index.html">Tux & Terminal</a>
-        <div class="nav-items">
-          <a href="/index.html">Home</a> <a href="/articles.html">Articles</a>
-        </div>
-      </nav>
-    </header>
-    <main>
+{% extends "base.html" %}
+
+{% block head %}
+{% endblock %}
+{% block body %}
       <h1>Fingerprinting: The Hidden Trap on the Modern Web</h1>
 
       <p>
@@ -347,10 +333,10 @@
 
       <h3>Privacy-hardened browsers.</h3>
       <ul>
-        <p>
+
           Many community-maintained browsers come out of the box with tweaks for
           privacy, including fingerprinting protection.
-        </p>
+
       </ul>
       <h4>Recommended Browsers</h4>
       <ul>
@@ -435,10 +421,4 @@
 
       <p>Hope you find this article useful.</p>
       <p>Thank you for reading.</p>
-    </main>
-    <footer>
-      Tux&Terminal 2026
-      <a href="/privacy.html">Privacy Policy</a>
-    </footer>
-  </body>
-</html>
+    {% endblock %}

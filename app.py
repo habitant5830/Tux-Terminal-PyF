@@ -58,7 +58,7 @@ def index():
 for home_article in home_articles:
     slug = home_article['link'].strip('/')
     def make_view(slug=slug, home_article=home_article):
-        return render_template('index.html', home_article=home_article)
+        return render_template(f'{slug}')
     app.add_url_rule(home_article['link'], endpoint=f'home_article_{slug}', view_func=make_view)
 
 @app.route("/articles.html")
@@ -195,7 +195,7 @@ articles = [
 for article in articles:
     slug = article['link'].strip('/')
     def make_view(slug=slug, article=article):
-        return render_template('articles.html', article=article)
+        return render_template(f'{slug}')
     app.add_url_rule(article['link'], endpoint=f'article_{slug}', view_func=make_view)
 
 # Todo list

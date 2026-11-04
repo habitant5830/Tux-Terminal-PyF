@@ -1,242 +1,223 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/style/style.css" />
-    <link rel="icon" href="/images/favicon.png" />
-    <title>Tux & Terminal</title>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <a href="/index.html">Tux & Terminal</a>
-        <div class="nav-items">
-          <a href="/index.html">Home</a> <a href="/articles.html">Articles</a>
-        </div>
-      </nav>
-    </header>
-    <main>
-      <h1>Why You Should Always Use a VPN</h1>
+{% extends "base.html" %}
 
-      <p>
-        Every day, thousands of advertising companies, ISPs, and governments
-        harvest personal data through our devices to profile us, monitor our
-        locations, and monetize our online activity.
-      </p>
+{% block head %}
+{% endblock %}
+{% block body %}
+  <h1>Why You Should Always Use a VPN</h1>
 
-      <p>
-        A VPN neutralizes most of these tracking vectors by encrypting your
-        traffic at the device level before it leaves your network.
-      </p>
+  <p>
+    Every day, thousands of advertising companies, ISPs, and governments
+    harvest personal data through our devices to profile us, monitor our
+    locations, and monetize our online activity.
+  </p>
 
-      The recommendations below are un-sponsored and vetted against strict
-      criteria: proven zero-logs policies, independent audits, and strong
-      community trust. They will not hand over data under court order because
-      they do not log it in the first place.
+  <p>
+    A VPN neutralizes most of these tracking vectors by encrypting your
+    traffic at the device level before it leaves your network.
+  </p>
 
-      <h2>What Does a VPN Actually Do?</h2>
+  The recommendations below are un-sponsored and vetted against strict
+  criteria: proven zero-logs policies, independent audits, and strong
+  community trust. They will not hand over data under court order because
+  they do not log it in the first place.
 
-      <p>
-        A VPN is not a magic cure-all. It is a targeted privacy tool with clear
-        strengths and distinct limits.
-      </p>
+  <h2>What Does a VPN Actually Do?</h2>
 
-      <p>
-        When you connect to a VPN, you substitute your ISP with the VPN server.
-        All data passing between your device and that server is encrypted inside
-        a secure tunnel—blinding your ISP, local network admins, and network
-        eavesdroppers.
-      </p>
+  <p>
+    A VPN is not a magic cure-all. It is a targeted privacy tool with clear
+    strengths and distinct limits.
+  </p>
 
-      <h2>The Real Threats You Face</h2>
+  <p>
+    When you connect to a VPN, you substitute your ISP with the VPN server.
+    All data passing between your device and that server is encrypted inside
+    a secure tunnel—blinding your ISP, local network admins, and network
+    eavesdroppers.
+  </p>
 
-      <h3>1. Public Wi-Fi</h3>
+  <h2>The Real Threats You Face</h2>
 
-      <p>
-        Public networks in cafes, hotels, or airports are rarely secure. Network
-        operators and nearby packet sniffers can easily monitor traffic and tie
-        activity directly to your device—especially if your MAC address isn't
-        randomized.
-      </p>
+  <h3>1. Public Wi-Fi</h3>
 
-      <p>
-        While HTTPS hides specific page content, your destination domain is
-        broadcast in plain text unless your DNS queries are encrypted. Anyone on
-        the network can see that you connected to Wikipedia, YouTube, or your
-        bank.
-      </p>
+  <p>
+    Public networks in cafes, hotels, or airports are rarely secure. Network
+    operators and nearby packet sniffers can easily monitor traffic and tie
+    activity directly to your device—especially if your MAC address isn't
+    randomized.
+  </p>
 
-      <h3>2. ISP Logging</h3>
+  <p>
+    While HTTPS hides specific page content, your destination domain is
+    broadcast in plain text unless your DNS queries are encrypted. Anyone on
+    the network can see that you connected to Wikipedia, YouTube, or your
+    bank.
+  </p>
 
-      <p>
-        Your ISP sits directly in your data path, recording detailed logs of
-        your internet usage. In many jurisdictions, ISPs hand this data to state
-        agencies without court orders or sell it directly to commercial data
-        brokers.
-      </p>
+  <h3>2. ISP Logging</h3>
 
-      <h3>3. Location Tracking and IP Exposure</h3>
+  <p>
+    Your ISP sits directly in your data path, recording detailed logs of
+    your internet usage. In many jurisdictions, ISPs hand this data to state
+    agencies without court orders or sell it directly to commercial data
+    brokers.
+  </p>
 
-      <p>
-        Apps combine your IP address with unique device IDs, MAC addresses, and
-        app inventories to build persistent behavioral profiles.
-      </p>
+  <h3>3. Location Tracking and IP Exposure</h3>
 
-      <p>
-        A single mobile app or game can share telemetry with hundreds of data
-        brokers behind the scenes. Most users only realize the scale of this
-        surveillance when their personal details surface in a breach from a
-        broker they never directly interacted with.
-      </p>
+  <p>
+    Apps combine your IP address with unique device IDs, MAC addresses, and
+    app inventories to build persistent behavioral profiles.
+  </p>
 
-      <h3>4. Internet Censorship</h3>
+  <p>
+    A single mobile app or game can share telemetry with hundreds of data
+    brokers behind the scenes. Most users only realize the scale of this
+    surveillance when their personal details surface in a breach from a
+    broker they never directly interacted with.
+  </p>
 
-      <p>
-        Governments and ISPs routinely restrict or block access to independent
-        news, communication tools, and educational resources to control
-        narrative flow.
-      </p>
+  <h3>4. Internet Censorship</h3>
 
-      <p>
-        A VPN bypasses these artificial blocks by routing your traffic through
-        uncensored regions, restoring access to the open web.
-      </p>
+  <p>
+    Governments and ISPs routinely restrict or block access to independent
+    news, communication tools, and educational resources to control
+    narrative flow.
+  </p>
 
-      <h2>What VPNs Can't Protect Against</h2>
+  <p>
+    A VPN bypasses these artificial blocks by routing your traffic through
+    uncensored regions, restoring access to the open web.
+  </p>
 
-      <h3>1. Phishing, Malware, and Malicious Downloads</h3>
+  <h2>What VPNs Can't Protect Against</h2>
 
-      <p>
-        A VPN encrypts transport; it does not filter bad content. It cannot stop
-        malware downloads, phishing links, or user error. While providers like
-        Mullvad, IVPN, and Proton offer optional DNS-level blocking for ads and
-        malware, basic digital hygiene—careful downloading, link verification,
-        and browser choice—remains your primary defense.
-      </p>
+  <h3>1. Phishing, Malware, and Malicious Downloads</h3>
 
-      VPN-based DNS blocking is often basic compared to dedicated privacy
-      resolvers like Quad9 or NextDNS. Pairing your VPN with a custom, no-logs
-      DNS resolver provides tighter control over tracking and malware filtering.
+  <p>
+    A VPN encrypts transport; it does not filter bad content. It cannot stop
+    malware downloads, phishing links, or user error. While providers like
+    Mullvad, IVPN, and Proton offer optional DNS-level blocking for ads and
+    malware, basic digital hygiene—careful downloading, link verification,
+    and browser choice—remains your primary defense.
+  </p>
 
-      <p>
-        <a href="domain-name-system.html"
-          >Read my deep dive on DNS resolvers here.</a
-        >
-      </p>
+  VPN-based DNS blocking is often basic compared to dedicated privacy
+  resolvers like Quad9 or NextDNS. Pairing your VPN with a custom, no-logs
+  DNS resolver provides tighter control over tracking and malware filtering.
 
-      <h3>2. Browser Fingerprinting and Script Tracking</h3>
+  <p>
+    <a href="domain-name-system.html"
+      >Read my deep dive on DNS resolvers here.</a
+    >
+  </p>
 
-      <p>
-        A new IP address will not hide you from client-side tracking. Scripts
-        executing in your browser can collect hardware specs, font lists, and
-        screen configurations to build a unique fingerprint that tracks you
-        across IP changes.
-      </p>
+  <h3>2. Browser Fingerprinting and Script Tracking</h3>
 
-      <p>To learn how to mitigate browser-level tracking:</p>
+  <p>
+    A new IP address will not hide you from client-side tracking. Scripts
+    executing in your browser can collect hardware specs, font lists, and
+    screen configurations to build a unique fingerprint that tracks you
+    across IP changes.
+  </p>
 
-      <ul>
-        <li>
-          <a href="fingerprinting.html">Guide to Browser Fingerprinting</a>
-        </li>
-        <li>
-          <a href="location-tracking.html"
-            >Understanding Location Tracking Vectors</a
-          >
-        </li>
-      </ul>
+  <p>To learn how to mitigate browser-level tracking:</p>
 
-      <h2>What Makes a VPN Good?</h2>
+  <ul>
+    <li>
+      <a href="fingerprinting.html">Guide to Browser Fingerprinting</a>
+    </li>
+    <li>
+      <a href="location-tracking.html"
+        >Understanding Location Tracking Vectors</a
+      >
+    </li>
+  </ul>
 
-      <ul>
-        <li>Independently audited no-logs infrastructure.</li>
-        <li>Fully open-source client applications across all platforms.</li>
-        <li>Transparent corporate ownership and jurisdiction.</li>
-        <li>
-          Essential security features: kill switch, IPv6 leak protection, and
-          DNS leak protection.
-        </li>
-        <li>Support for modern protocols like WireGuard.</li>
-        <li>Anonymous registration and cash/crypto payment options.</li>
-        <li>
-          A proven history of operational transparency during security
-          incidents.
-        </li>
-      </ul>
+  <h2>What Makes a VPN Good?</h2>
 
-      <h2>Top VPN Picks</h2>
+  <ul>
+    <li>Independently audited no-logs infrastructure.</li>
+    <li>Fully open-source client applications across all platforms.</li>
+    <li>Transparent corporate ownership and jurisdiction.</li>
+    <li>
+      Essential security features: kill switch, IPv6 leak protection, and
+      DNS leak protection.
+    </li>
+    <li>Support for modern protocols like WireGuard.</li>
+    <li>Anonymous registration and cash/crypto payment options.</li>
+    <li>
+      A proven history of operational transparency during security
+      incidents.
+    </li>
+  </ul>
 
-      <h3>1. Mullvad VPN</h3>
+  <h2>Top VPN Picks</h2>
 
-      <p>
-        Mullvad remains the gold standard for anonymous VPNs. Account creation
-        requires no email address or personal details—only a randomly generated
-        16-digit account number.
-      </p>
+  <h3>1. Mullvad VPN</h3>
 
-      <p>
-        They accept cash by mail and cryptocurrency alongside standard payments,
-        completely unlinking your financial identity from your VPN account.
-      </p>
+  <p>
+    Mullvad remains the gold standard for anonymous VPNs. Account creation
+    requires no email address or personal details—only a randomly generated
+    16-digit account number.
+  </p>
 
-      <p>
-        All client apps are fully open-source, cross-platform, and regularly
-        audited by third parties.
-      </p>
+  <p>
+    They accept cash by mail and cryptocurrency alongside standard payments,
+    completely unlinking your financial identity from your VPN account.
+  </p>
 
-      <h3>2. IVPN</h3>
+  <p>
+    All client apps are fully open-source, cross-platform, and regularly
+    audited by third parties.
+  </p>
 
-      <p>
-        IVPN mirrors Mullvad’s privacy-first model: account creation without
-        personal identifiers, open-source codebases, and independent security
-        audits.
-      </p>
+  <h3>2. IVPN</h3>
 
-      <p>
-        It features native multi-hop routing for added anonymity, though its
-        total server footprint is smaller than larger competitors.
-      </p>
+  <p>
+    IVPN mirrors Mullvad’s privacy-first model: account creation without
+    personal identifiers, open-source codebases, and independent security
+    audits.
+  </p>
 
-      <h3>3. Windscribe</h3>
+  <p>
+    It features native multi-hop routing for added anonymity, though its
+    total server footprint is smaller than larger competitors.
+  </p>
 
-      <p>
-        Windscribe combines open-source apps with extensive client-side
-        customization options and transparent security disclosure.
-      </p>
+  <h3>3. Windscribe</h3>
 
-      <p>
-        Its free tier provides a generous monthly data allowance. You can unlock
-        additional bandwidth by posting on social media—a cheap marketing
-        gimmick, but functional if you need extra data.
-      </p>
+  <p>
+    Windscribe combines open-source apps with extensive client-side
+    customization options and transparent security disclosure.
+  </p>
 
-      <h3>4. Proton VPN</h3>
+  <p>
+    Its free tier provides a generous monthly data allowance. You can unlock
+    additional bandwidth by posting on social media—a cheap marketing
+    gimmick, but functional if you need extra data.
+  </p>
 
-      <p>
-        Proton VPN combines audited open-source infrastructure with a globally
-        distributed server network. Its free tier offers unlimited bandwidth
-        without speed throttling.
-      </p>
+  <h3>4. Proton VPN</h3>
 
-      Proton offers a full privacy suite (Mail, Drive, Calendar). However,
-      centralizing all personal data within a single provider creates a single
-      point of failure. Consider spreading critical services across independent
-      providers rather than relying on one ecosystem.
+  <p>
+    Proton VPN combines audited open-source infrastructure with a globally
+    distributed server network. Its free tier offers unlimited bandwidth
+    without speed throttling.
+  </p>
 
-      <h2>Conclusion</h2>
+  Proton offers a full privacy suite (Mail, Drive, Calendar). However,
+  centralizing all personal data within a single provider creates a single
+  point of failure. Consider spreading critical services across independent
+  providers rather than relying on one ecosystem.
 
-      <p>
-        A VPN isn't total protection, but it reliably solves network-level
-        surveillance. You generate valuable telemetry every time you connect;
-        paying for or configuring a trustworthy VPN isn't an arbitrary
-        expense—it is reclaiming control over the network traffic you produce
-        every day.
-      </p>
-    </main>
-    <footer>
-      Tux&Terminal 2026
-      <a href="/privacy.html">Privacy Policy</a>
-    </footer>
-  </body>
-</html>
+  <h2>Conclusion</h2>
+
+  <p>
+    A VPN isn't total protection, but it reliably solves network-level
+    surveillance. You generate valuable telemetry every time you connect;
+    paying for or configuring a trustworthy VPN isn't an arbitrary
+    expense—it is reclaiming control over the network traffic you produce
+    every day.
+  </p>
+
+{% endblock %}
