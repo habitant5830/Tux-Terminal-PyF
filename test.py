@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import lxml
+import datetime
 
 # pretend like a browser
 urls = [
@@ -18,7 +19,6 @@ for url in urls:
 
     # obtain all entries on the feed url
     items = soup.find_all('item')
-    print(items)
     # RSS 2.0 format
     for item in items:
         title = item.title.text
@@ -36,3 +36,6 @@ for url in urls:
                     break  # first real text paragraph is the summary
 
         Feeds.append({'Title': title, 'Link': link, 'Description': text})
+
+date = datetime.datetime.now()
+print(date)

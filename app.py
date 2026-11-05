@@ -1,7 +1,7 @@
 import requests
 from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 from bs4 import BeautifulSoup
 import lxml
 
@@ -288,18 +288,30 @@ def rss_feed():
                 if not pubdate_tag or not pubdate_tag.text:
                     continue
 
+                # Filter duplicate posts
                 link = link_tag.text
                 if link in seen:
                     continue
-                seen.add(link)
 
-                title = title_tag.text
+                # date
+                now = datetime.now(timezone.utc)
                 formatted_date = datetime.strptime(pubdate_tag.text, '%a, %d %b %Y %H:%M:%S %z')
                 date = formatted_date.strftime('%a, %d %b %Y %I:%M %p')
+
+                if (now - formatted_date) > timedelta(hours=168):
+                    continue
+
+                # Skip promotional/paid posts
+                title = title_tag.text
+                if '[$]' in title:
+                    continue
+
+                seen.add(link)
+
                 category = category_tag.text if category_tag else ''
                 description = item.description
 
-    # Double parsing (xml parsing + html parsing)
+                # Double parsing (xml parsing + html parsing)
                 text = ''
                 if description:
                     desc_soup = BeautifulSoup(description.get_text(), 'html.parser')
@@ -309,9 +321,12 @@ def rss_feed():
                             text = p.get_text()
                             break  # first real text paragraph is the summary
 
-                Feeds.append({'title': title, 'date': date, 'link': link, 'description': text, 'category': category})
+                Feeds.append({'title': title, 'date': date, 'link': link, 'description': text, 'category': category, 'published': formatted_date})
         except Exception as e:
             print(f"Feed failed: {url} - {e}")
+
+    # Sort output based on published date
+    Feeds.sort(key=lambda x: x['published'], reverse=True)
     return Feeds
 
 @app.route('/live-feed')
