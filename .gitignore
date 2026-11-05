@@ -1,0 +1,11 @@
+test.py
+
+# Virtual environment
+venv/
+.venv/
+
+# Instance
+instance
+
+# DB
+db.sqlite3

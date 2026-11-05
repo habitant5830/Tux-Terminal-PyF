@@ -298,7 +298,7 @@ def rss_feed():
                 formatted_date = datetime.strptime(pubdate_tag.text, '%a, %d %b %Y %H:%M:%S %z')
                 date = formatted_date.strftime('%a, %d %b %Y %I:%M %p')
 
-                if (now - formatted_date) > timedelta(hours=168):
+                if (now - formatted_date) > timedelta(hours=48):
                     continue
 
                 # Skip promotional/paid posts
