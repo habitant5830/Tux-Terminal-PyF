@@ -9,11 +9,18 @@
         <div class="article">
             <a class="feed-title" href="{{ feed.link }}"
             >{{ feed.title }}</a>
+            <a class="feed-item-url" href="{{ feed.link }}">{{ feed.link }}</a>
+            <div>
+                <p class="category-pill">{{ feed.category }}</p>
+            </div>
             <div>
                 <p class="date-pill">{{ feed.date }}</p>
             </div>
             <div>
                 <p class="summary">{{ feed.description }}</p>
+            </div>
+            <div>
+
             </div>
         </div>
         {% endfor %}

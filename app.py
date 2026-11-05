@@ -249,10 +249,21 @@ def rss_feed():
     urls = [
         'https://9to5linux.com/feed/',
         'https://www.gamingonlinux.com/article_rss.php?newsonly',
+        'https://www.phoronix.com/rss.php',
+        'https://lwn.net/headlines/newrss',
+        'https://9to5linux.com/feed',
+        'https://archlinux.org/feeds/news/',
+        'https://bits.debian.org/feeds/feed.rss',
     ]
 
-    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '}
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'Accept-Language': 'en-US,en;q=0.9',
+    }
+
     Feeds = []
+    seen = set()
 
     for url in urls:
         try:
@@ -265,14 +276,30 @@ def rss_feed():
 
             # RSS 2.0 format
             for item in items:
-                title = item.title.text
-                published_date = item.pubDate.text
-                formatted_date = datetime.strptime(published_date, '%a, %d %b %Y %H:%M:%S %z')
-                date = formatted_date.strftime('%a, %d %b %Y %I:%M %p')
+                link_tag = item.link
+                title_tag = item.title
+                pubdate_tag = item.pubDate
+                category_tag = item.category
 
-                description = item.description # Prints none if nothing
-                link = item.link.text #
-                # Double parsing (xml parsing + html parsing)
+                if not link_tag or not link_tag.text:
+                    continue
+                if not title_tag or not title_tag.text:
+                    continue
+                if not pubdate_tag or not pubdate_tag.text:
+                    continue
+
+                link = link_tag.text
+                if link in seen:
+                    continue
+                seen.add(link)
+
+                title = title_tag.text
+                formatted_date = datetime.strptime(pubdate_tag.text, '%a, %d %b %Y %H:%M:%S %z')
+                date = formatted_date.strftime('%a, %d %b %Y %I:%M %p')
+                category = category_tag.text if category_tag else ''
+                description = item.description
+
+    # Double parsing (xml parsing + html parsing)
                 text = ''
                 if description:
                     desc_soup = BeautifulSoup(description.get_text(), 'html.parser')
@@ -282,7 +309,7 @@ def rss_feed():
                             text = p.get_text()
                             break  # first real text paragraph is the summary
 
-                Feeds.append({'title': title, 'date': date, 'link': link, 'description': text})
+                Feeds.append({'title': title, 'date': date, 'link': link, 'description': text, 'category': category})
         except Exception as e:
             print(f"Feed failed: {url} - {e}")
     return Feeds
