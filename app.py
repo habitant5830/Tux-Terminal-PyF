@@ -255,32 +255,37 @@ def rss_feed():
     Feeds = []
 
     for url in urls:
-        resp = requests.get(url, headers=headers)
-        soup = BeautifulSoup(resp.content, 'xml')
-        # obtain all entries on the feed url
-        items = soup.find_all('item')
+        try:
+            resp = requests.get(url, headers=headers, timeout=10)
+            if resp.status_code != 200:
+                continue
+            soup = BeautifulSoup(resp.content, 'xml')
+            # obtain all entries on the feed url
+            items = soup.find_all('item')
 
-        # RSS 2.0 format
-        for item in items:
-            title = item.title.text
-            published_date = item.pubDate.text
-            formatted_date = datetime.strptime(published_date, '%a, %d %b %Y %H:%M:%S %z')
-            date = formatted_date.strftime('%a, %d %b %Y %I:%M %p')
+            # RSS 2.0 format
+            for item in items:
+                title = item.title.text
+                published_date = item.pubDate.text
+                formatted_date = datetime.strptime(published_date, '%a, %d %b %Y %H:%M:%S %z')
+                date = formatted_date.strftime('%a, %d %b %Y %I:%M %p')
 
-            description = item.description # Prints none if nothing
-            link = item.link.text #
-            # Double parsing (xml parsing + html parsing)
-            text = ''
-            if description:
-                desc_soup = BeautifulSoup(description.get_text(), 'html.parser')
-                for p in desc_soup.find_all('p'):
-                    # Skip paragraphs that are empty or image-only
-                    if p.get_text().strip():
-                        text = p.get_text()
-                        break  # first real text paragraph is the summary
+                description = item.description # Prints none if nothing
+                link = item.link.text #
+                # Double parsing (xml parsing + html parsing)
+                text = ''
+                if description:
+                    desc_soup = BeautifulSoup(description.get_text(), 'html.parser')
+                    for p in desc_soup.find_all('p'):
+                        # Skip paragraphs that are empty or image-only
+                        if p.get_text().strip():
+                            text = p.get_text()
+                            break  # first real text paragraph is the summary
 
-            Feeds.append({'title': title, 'date': date, 'link': link, 'description': text})
-        return Feeds
+                Feeds.append({'title': title, 'date': date, 'link': link, 'description': text})
+        except Exception as e:
+            print(f"Feed failed: {url} - {e}")
+    return Feeds
 
 @app.route('/live-feed')
 def live_feed():
