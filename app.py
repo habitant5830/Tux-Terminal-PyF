@@ -296,7 +296,7 @@ def rss_feed():
                 # date
                 now = datetime.now(timezone.utc)
                 formatted_date = datetime.strptime(pubdate_tag.text, '%a, %d %b %Y %H:%M:%S %z')
-                date = formatted_date.strftime('%a, %d %b %Y %I:%M %p')
+                date = formatted_date.strftime('%a, %d %b %Y')
 
                 if (now - formatted_date) > timedelta(hours=48):
                     continue
