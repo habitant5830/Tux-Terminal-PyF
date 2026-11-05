@@ -1,11 +1,5 @@
-test.py
-
-# Virtual environment
-venv/
+__pycache__/
+instance/
+.env
 .venv/
-
-# Instance
-instance
-
-# DB
-db.sqlite3
+.idea/   
