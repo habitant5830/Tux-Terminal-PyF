@@ -334,6 +334,10 @@ def live_feed():
     feeds = rss_feed()
     return render_template("live-feed.html", feeds=feeds)
 
+@app.route('/watchlist')
+def watchlist():
+    return render_template('watchlist.html')
+
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()

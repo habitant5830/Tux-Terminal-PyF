@@ -1,0 +1,55 @@
+{% extends "base.html" %} {% block head %} {% endblock %} {% block body %}
+<div class="movies-shelf">
+  <div class="movie">
+    <img
+      class="movie-poster"
+      src="{{ url_for('static', filename='images/movies/memories 2013.jpg')}}"
+    />
+    <div class="movie-items">
+      <a class="movie-title" href="">Memories (2013)</a>
+      <p class="language"><strong>Language:</strong> Malayalam</p>
+      <p class="rating">⭐⭐⭐⭐⭐</p>
+      <p class="watched-date"><strong>Watched on: 05 Nov 2026</strong></p>
+    </div>
+  </div>
+
+  <div class="movie">
+    <img
+      class="movie-poster"
+      src="{{ url_for('static', filename='images/movies/anjaam pathira 2020.jpg')}}"
+    />
+    <div class="movie-items">
+      <a class="movie-title" href="">Anjaam Pathira (2020)</a>
+      <p class="language"><strong>Language:</strong> Malayalam</p>
+      <p class="rating">⭐⭐⭐⭐⭐</p>
+      <p class="watched-date"><strong>Watched on: 05 Nov 2026</strong></p>
+    </div>
+  </div>
+
+  <div class="movie">
+    <img
+      class="movie-poster"
+      src="{{ url_for('static', filename='images/movies/joseph 2018.jpg')}}"
+    />
+    <div class="movie-items">
+      <a class="movie-title" href="">Joseph (2018)</a>
+      <p class="language"><strong>Language:</strong> Malayalam</p>
+      <p class="rating">⭐⭐⭐⭐⭐</p>
+      <p class="watched-date"><strong>Watched on: 06 Nov 2026</strong></p>
+    </div>
+  </div>
+
+  <div class="movie">
+    <img
+      class="movie-poster"
+      src="{{ url_for('static', filename='images/movies/nayattu 2021.jpg')}}"
+    />
+    <div class="movie-items">
+      <a class="movie-title" href="">Nayattu (2021)</a>
+      <p class="language"><strong>Language:</strong> Malayalam</p>
+      <p class="rating">⭐⭐⭐⭐⭐</p>
+      <p class="watched-date"><strong>Watched on: 06 Nov 2026</strong></p>
+    </div>
+  </div>
+</div>
+{% endblock %}
