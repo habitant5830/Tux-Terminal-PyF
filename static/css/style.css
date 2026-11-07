@@ -315,4 +315,8 @@ th {
   .live-feed-container {
     grid-template-columns: 1fr;
   }
+
+  .movies-shelf {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
 }
