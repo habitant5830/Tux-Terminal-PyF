@@ -21,6 +21,7 @@
   /*grid*/
   --grid-bg: #92ffdb;
   --grid-box-shadow: #12ffb0;
+  --date-bar: #03ac13;
 
   /*link*/
   --link: #001b12;
@@ -240,6 +241,16 @@ th {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   margin: 1rem;
   gap: 1rem;
+}
+
+.date-bar {
+  display: flex;
+  justify-content: center;
+  background-color: var(--date-bar);
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  border-radius: 1rem;
+  color: #ffffff;
 }
 
 .movie {
